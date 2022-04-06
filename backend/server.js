@@ -18,6 +18,7 @@ app.get("/image-list", (req, res, next) => {
 
 
 app.use('/pub', express.static(`${pathToFrontend}/pub`));
+app.use('/dist', express.static(`${pathToFrontend}/dist`));
 
 app.use('/img', express.static(`${pathToFrontend}/img`));
 
