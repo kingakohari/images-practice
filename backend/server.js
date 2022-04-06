@@ -19,6 +19,8 @@ app.get("/image-list", (req, res, next) => {
 
 app.use('/pub', express.static(`${pathToFrontend}/pub`));
 
+app.use('/img', express.static(`${pathToFrontend}/img`));
+
 app.listen(port, () => {
     console.log(`http://127.0.0.1:${port}`);
 })
