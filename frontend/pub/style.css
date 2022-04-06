@@ -33,9 +33,9 @@
   
   /* -------------------- CSS reset vége -------------------- */
 
-.swiper {
+  .swiper {
     width: 100%;
-    height: 100vh
+    height: 100vh;
 }
 
 .swiper-slide h2 {
@@ -45,12 +45,12 @@
     transform: translateX(-50%);
     padding: 20px;
     background-color: rgb(209, 56, 176);
-    color: white
+    color: white;
+    z-index: 100
 }
 
 .swiper-slide img {
-    width: 100%;
-    height: 100vh;
+    transform: translateX(75%);
+    width: 40%;
     object-fit: cover
-
 }
