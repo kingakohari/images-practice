@@ -13,11 +13,13 @@ const swiperComponent = (data, component) => {
     `
 }
 
-const swiperSlideComponent = ({filename, title}) => {
+const swiperSlideComponent = ({filename, title, link, photographer}) => {
     return `
     <div class="swiper-slide">
         <h2>${title}</h2>
-        <img src="./img/${filename}">
+        <h3>Photographer: ${photographer}</h3>
+        <p>Source:<br> ${link}</p>
+        <img src="${link}">
     </div>
     `
 }
