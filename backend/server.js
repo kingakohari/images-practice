@@ -52,8 +52,7 @@ app.post("/", (req, res) => {
     answer.pictureName = picture.name;
 
     // Upload data from form
-    const formData = req.body;
-    /* formData.image_name = picture.name; */
+    const formData = req.body; 
     jsonData.push(formData);
 
     fs.writeFile(`${pathToFrontend}/data.json`, JSON.stringify(jsonData), (error) => {
