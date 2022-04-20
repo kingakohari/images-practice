@@ -89,6 +89,11 @@ const  loadEvent = async () => {
             })
     })
 
+    const deleteBtn = document.getElementById("deleteBtn");
+    deleteBtn.addEventListener("click",function(e){
+        e.parentNode.remove();
+      })
+
   
 }
 
