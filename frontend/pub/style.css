@@ -73,9 +73,79 @@ body {
 }
 
 .swiper-slide img {
-
   transform: translateX(100%);
   width: 50%; 
-  height: 90vh;
+  height: 80vh;
   object-fit: cover
+}
+
+#deleteBtn {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(218, 136, 69, 0.918);
+}
+
+#deleteBtn:hover {
+  color: rgba(218, 136, 69, 0.918);
+  background-color: #fff;
+  border: 2px solid rgba(218, 136, 69, 0.918);
+}
+
+.addNew{
+  background-color: rgba(218, 136, 69, 0.918);
+}
+
+h1 {
+  text-transform: uppercase;
+  color:#fff;
+  padding: 10px;
+  margin-left: 5%;
+  font-size: 15px;
+
+}
+
+#form{
+  margin-left: 5%;
+}
+
+input[type="text"]{
+  height: 20px;
+  background-color: #fff;
+}
+
+input[name="title"]{
+  width: 300px;
+}
+
+input[name="link"]{
+  width: 400px;
+}
+
+input[name="photographer"]{
+  width: 350px;
+}
+
+input[type="file"]{
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+#addBtn{
+  position: relative;
+  width: 140x;
+  height: 30px;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 2px;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #fff;
 }
