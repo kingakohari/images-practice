@@ -65,7 +65,7 @@ body {
 
 .swiper-slide p {
   position: absolute;
-  max-width: 800px;
+  max-width: 35%;
   top: 10%;
   left: 5%;
   color: #fff;
@@ -79,7 +79,7 @@ body {
   object-fit: cover
 }
 
-#deleteBtn {
+.deleteBtn {
   position: absolute;
   top: 50%;
   left: 5%;
@@ -92,7 +92,7 @@ body {
   background-color: rgba(218, 136, 69, 0.918);
 }
 
-#deleteBtn:hover {
+.deleteBtn:hover {
   color: rgba(218, 136, 69, 0.918);
   background-color: #fff;
   border: 2px solid rgba(218, 136, 69, 0.918);

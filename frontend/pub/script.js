@@ -7,8 +7,8 @@ const swiperComponent = (data, component) => {
     return `    
     <div class="swiper">
         <div class="swiper-wrapper"> 
-            ${data.map(picture => component(picture)).join("")}
-        </div>
+            ${data.map(photoInfo => component(photoInfo)).join("")}
+        </div> 
     </div>
     `
     
@@ -21,7 +21,7 @@ const swiperSlideComponent = ({title, link, photographer}) => {
         <h3>Photographer: ${photographer}</h3>
         <p>Source:<br> ${link}</p>
         <img src="${link}">
-        <button id="deleteBtn">Delete this entry</button>
+        <button class="deleteBtn">Delete this entry</button>
     </div>
     `
 }
@@ -78,7 +78,9 @@ const  loadEvent = async () => {
             .then(async data => {
                 if (data.status === 200){
                     const res = await data.json()
-                    rootElement.insertAdjacentHTML("beforeend", swiperComponent(result, swiperSlideComponent(res)))
+                    /* rootElement.insertAdjacentHTML("beforeend", swiperComponent(result, swiperSlideComponent(res))) */
+                    swiper.appendSlide((result, swiperSlideComponent(res))) 
+                    swiper.update(); 
                     console.dir(data)
                     res.send({response: "Image gallery has been updated!"})
                 }
@@ -89,11 +91,19 @@ const  loadEvent = async () => {
             })
     })
 
-    const deleteBtn = document.getElementById("deleteBtn");
-    deleteBtn.addEventListener("click",function(e){
-        e.parentNode.remove();
-      })
+    const removeButtons = document.getElementsByClassName("deleteBtn"); 
+    
+    Array.from(removeButtons).forEach((removeButton) => {
+        removeButton.addEventListener('click', () => {
+          removeButton.parentNode.remove();
+        });
+      });
 
+/*      swiper.removeSlide(swiper.realIndex)
+        console.log(swiper.realIndex);
+        swiper.update() */
+      
+    
   
 }
 
