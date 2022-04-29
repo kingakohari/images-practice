@@ -20,7 +20,7 @@ app.get("/image-list", (req, res, next) => {
 }) 
 
 
-const uploads = path.join(`${pathToFrontend}/img`)
+const uploads = path.join(`${pathToFrontend}/img/`)
 
 // If there is a data.json, read the data from the file, if not, use an empty Array
 let jsonData = [];
@@ -42,15 +42,13 @@ try {
 app.post("/", (req, res) => {
     // Upload image
     const picture = req.files.picture;
-    const answer = {};
 
     if (picture) {
         picture.mv(uploads + picture.name, error => {
             return res.status(500).send(error);
         });
     }
-    answer.pictureName = picture.name;
-
+    
     // Upload data from form
     const formData = req.body; 
     jsonData.push(formData);
@@ -60,8 +58,24 @@ app.post("/", (req, res) => {
             console.log(error);
         }
     });
-    res.send(answer);
+    res.send(formData);
 });
+
+app.delete("/delete/:id", (req, res) => {
+  console.log(util.inspect(req.body)); 
+   res.send("delete request")
+
+   /* const removePath = __dirname + "/../frontend/upload/profile.jpg";
+
+    if (fs.existsSync(removePath)) {
+        fs.unlinkSync(removePath, err => {
+            if (err) {
+                console.log(err);
+                return res.status(500).send(err);
+            }
+        }) */
+    
+})
 
 app.use('/pub', express.static(`${pathToFrontend}/pub`));
 app.use('/img', express.static(`${pathToFrontend}/img`));
