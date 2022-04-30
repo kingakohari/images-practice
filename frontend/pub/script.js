@@ -86,8 +86,8 @@ const  loadEvent = async () => {
                     const photographer = res.photographer
                         
 
-                    /* rootElement.insertAdjacentHTML("beforeend", swiperComponent(result, swiperSlideComponent(res))) */
-                    swiper.appendSlide((result, swiperSlideComponent({title, link, photographer}))) 
+                    /* rootElement.insertAdjacentHTML("beforeend", swiperComponent(result, swiperSlideComponent()) */
+                    swiper.appendSlide(result, swiperSlideComponent({title, link, photographer})) 
                     swiper.update(); 
                     console.dir(data)
                     /* res.send({response: "Image gallery has been updated!"}) */

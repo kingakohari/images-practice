@@ -62,18 +62,8 @@ app.post("/", (req, res) => {
 });
 
 app.delete("/delete/:id", (req, res) => {
-  console.log(util.inspect(req.body)); 
+  console.log(req.body); 
    res.send("delete request")
-
-   /* const removePath = __dirname + "/../frontend/upload/profile.jpg";
-
-    if (fs.existsSync(removePath)) {
-        fs.unlinkSync(removePath, err => {
-            if (err) {
-                console.log(err);
-                return res.status(500).send(err);
-            }
-        }) */
     
 })
 
